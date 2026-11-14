@@ -1,15 +1,17 @@
 {
   "expo": {
-    "name": "vogeltje-camera",
+    "name": "Vogeltje",
     "slug": "vogeltje-camera",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "nl.crispijnduin.vogeltje"
     },
     "android": {
+      "package": "nl.crispijnduin.vogeltje",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
@@ -18,6 +20,32 @@
       },
       "predictiveBackGestureEnabled": false
     },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Vogeltje gebruikt de camera om foto's te maken.",
+          "microphonePermission": false,
+          "recordAudioAndroid": false
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Vogeltje bewaart je foto's in je fotogalerij.",
+          "savePhotosPermission": "Vogeltje bewaart je foto's in je fotogalerij.",
+          "granularPermissions": ["photo"]
+        }
+      ],
+      [
+        "expo-audio",
+        {
+          "microphonePermission": false,
+          "recordAudioAndroid": false,
+          "enableBackgroundPlayback": false
+        }
+      ]
+    ],
     "web": {
       "favicon": "./assets/favicon.png"
     }
